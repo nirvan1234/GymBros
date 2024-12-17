@@ -12,6 +12,7 @@ import Login from '../screens/Login';
 import Register from '../screens/Register';
 import { NavigationContainer } from '@react-navigation/native'
 import { AuthContext } from '../authContext';
+import RequestChatScreen from '../screens/RequestChatScreen';
 
 
 const Stack = createNativeStackNavigator();
@@ -119,6 +120,10 @@ const StackNavigator = () => {
                name="main"
                component={BottomTabs}
                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+               name="RequestChatScreen"
+               component={RequestChatScreen}
             />
          </Stack.Navigator>
       )

@@ -12,10 +12,10 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		1A4E396D1710539213392AFE /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
+		38663189842CCD18F6308650 /* libPods-cloudGym.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3AA472B1AA83BD8B9FAF03 /* libPods-cloudGym.a */; };
+		426D451BD28D53EAE23C8150 /* libPods-cloudGym-cloudGymTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BA7B238498D1269EBFA4D74 /* libPods-cloudGym-cloudGymTests.a */; };
 		6CC69A982CEDC30700C1482B /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 6CC69A972CEDC30700C1482B /* Fonts */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		B2CFA6151E106C805C157EBD /* libPods-cloudGym-cloudGymTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B33EEEA4DBF64343E3A5B7CB /* libPods-cloudGym-cloudGymTests.a */; };
-		EB152645CE06F8988212AD63 /* libPods-cloudGym.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8943013C1BCABE9C5AF6C5C8 /* libPods-cloudGym.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +32,6 @@
 		00E356EE1AD99517003FC87E /* cloudGymTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cloudGymTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* cloudGymTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cloudGymTests.m; sourceTree = "<group>"; };
-		03E91EDCEA60C35DE016A65C /* Pods-cloudGym-cloudGymTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cloudGym-cloudGymTests.release.xcconfig"; path = "Target Support Files/Pods-cloudGym-cloudGymTests/Pods-cloudGym-cloudGymTests.release.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* cloudGym.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cloudGym.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = cloudGym/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = cloudGym/AppDelegate.mm; sourceTree = "<group>"; };
@@ -40,14 +39,15 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = cloudGym/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = cloudGym/main.m; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = cloudGym/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		66CD4924CB9A36A58D99E749 /* Pods-cloudGym-cloudGymTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cloudGym-cloudGymTests.debug.xcconfig"; path = "Target Support Files/Pods-cloudGym-cloudGymTests/Pods-cloudGym-cloudGymTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2BA7B238498D1269EBFA4D74 /* libPods-cloudGym-cloudGymTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cloudGym-cloudGymTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F3AA472B1AA83BD8B9FAF03 /* libPods-cloudGym.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cloudGym.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CFA1BF7F99E34347758A1C3 /* Pods-cloudGym-cloudGymTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cloudGym-cloudGymTests.release.xcconfig"; path = "Target Support Files/Pods-cloudGym-cloudGymTests/Pods-cloudGym-cloudGymTests.release.xcconfig"; sourceTree = "<group>"; };
+		681DCFEF08E6F068B80044AD /* Pods-cloudGym-cloudGymTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cloudGym-cloudGymTests.debug.xcconfig"; path = "Target Support Files/Pods-cloudGym-cloudGymTests/Pods-cloudGym-cloudGymTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6CC69A972CEDC30700C1482B /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = "../node_modules/react-native-vector-icons/Fonts"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = cloudGym/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8943013C1BCABE9C5AF6C5C8 /* libPods-cloudGym.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cloudGym.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B33EEEA4DBF64343E3A5B7CB /* libPods-cloudGym-cloudGymTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cloudGym-cloudGymTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D44A7EB95B6F1A047FE4E4A4 /* Pods-cloudGym.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cloudGym.debug.xcconfig"; path = "Target Support Files/Pods-cloudGym/Pods-cloudGym.debug.xcconfig"; sourceTree = "<group>"; };
-		D5638EFE597D693A164CC8A6 /* Pods-cloudGym.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cloudGym.release.xcconfig"; path = "Target Support Files/Pods-cloudGym/Pods-cloudGym.release.xcconfig"; sourceTree = "<group>"; };
+		B52F6B2A762B29C863668E8A /* Pods-cloudGym.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cloudGym.debug.xcconfig"; path = "Target Support Files/Pods-cloudGym/Pods-cloudGym.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		EDCC74B5230D8DDEBCFCDB55 /* Pods-cloudGym.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cloudGym.release.xcconfig"; path = "Target Support Files/Pods-cloudGym/Pods-cloudGym.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2CFA6151E106C805C157EBD /* libPods-cloudGym-cloudGymTests.a in Frameworks */,
+				426D451BD28D53EAE23C8150 /* libPods-cloudGym-cloudGymTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,7 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB152645CE06F8988212AD63 /* libPods-cloudGym.a in Frameworks */,
+				38663189842CCD18F6308650 /* libPods-cloudGym.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,8 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				8943013C1BCABE9C5AF6C5C8 /* libPods-cloudGym.a */,
-				B33EEEA4DBF64343E3A5B7CB /* libPods-cloudGym-cloudGymTests.a */,
+				3F3AA472B1AA83BD8B9FAF03 /* libPods-cloudGym.a */,
+				2BA7B238498D1269EBFA4D74 /* libPods-cloudGym-cloudGymTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -146,10 +146,10 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D44A7EB95B6F1A047FE4E4A4 /* Pods-cloudGym.debug.xcconfig */,
-				D5638EFE597D693A164CC8A6 /* Pods-cloudGym.release.xcconfig */,
-				66CD4924CB9A36A58D99E749 /* Pods-cloudGym-cloudGymTests.debug.xcconfig */,
-				03E91EDCEA60C35DE016A65C /* Pods-cloudGym-cloudGymTests.release.xcconfig */,
+				B52F6B2A762B29C863668E8A /* Pods-cloudGym.debug.xcconfig */,
+				EDCC74B5230D8DDEBCFCDB55 /* Pods-cloudGym.release.xcconfig */,
+				681DCFEF08E6F068B80044AD /* Pods-cloudGym-cloudGymTests.debug.xcconfig */,
+				4CFA1BF7F99E34347758A1C3 /* Pods-cloudGym-cloudGymTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -161,12 +161,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "cloudGymTests" */;
 			buildPhases = (
-				AA56F6DC2126A80C518A9E07 /* [CP] Check Pods Manifest.lock */,
+				0E5646E5203655D4FA2E585C /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				4C1D738C08B755F052229E8D /* [CP] Embed Pods Frameworks */,
-				E0D0AF32891933739426181C /* [CP] Copy Pods Resources */,
+				47BEC089329F34D909EAA56F /* [CP] Embed Pods Frameworks */,
+				324DE02412A41601363E1191 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -182,13 +182,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "cloudGym" */;
 			buildPhases = (
-				DE3B6B30EB08E47DD0D0E2C8 /* [CP] Check Pods Manifest.lock */,
+				DB5DB84C1A3A90068232D7A3 /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				9AA40D3FF2BE768471032A82 /* [CP] Embed Pods Frameworks */,
-				6EEB8627C90269E8A1B86D5C /* [CP] Copy Pods Resources */,
+				CCB39739E96EB0815E945FBB /* [CP] Embed Pods Frameworks */,
+				E3FAB18805FBEED07987A3FD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -273,58 +273,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"$REACT_NATIVE_PATH/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"$REACT_NATIVE_PATH/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		4C1D738C08B755F052229E8D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cloudGym-cloudGymTests/Pods-cloudGym-cloudGymTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cloudGym-cloudGymTests/Pods-cloudGym-cloudGymTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cloudGym-cloudGymTests/Pods-cloudGym-cloudGymTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6EEB8627C90269E8A1B86D5C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cloudGym/Pods-cloudGym-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cloudGym/Pods-cloudGym-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cloudGym/Pods-cloudGym-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9AA40D3FF2BE768471032A82 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cloudGym/Pods-cloudGym-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cloudGym/Pods-cloudGym-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cloudGym/Pods-cloudGym-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AA56F6DC2126A80C518A9E07 /* [CP] Check Pods Manifest.lock */ = {
+		0E5646E5203655D4FA2E585C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -346,7 +295,58 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DE3B6B30EB08E47DD0D0E2C8 /* [CP] Check Pods Manifest.lock */ = {
+		324DE02412A41601363E1191 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cloudGym-cloudGymTests/Pods-cloudGym-cloudGymTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cloudGym-cloudGymTests/Pods-cloudGym-cloudGymTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cloudGym-cloudGymTests/Pods-cloudGym-cloudGymTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		47BEC089329F34D909EAA56F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cloudGym-cloudGymTests/Pods-cloudGym-cloudGymTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cloudGym-cloudGymTests/Pods-cloudGym-cloudGymTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cloudGym-cloudGymTests/Pods-cloudGym-cloudGymTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CCB39739E96EB0815E945FBB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cloudGym/Pods-cloudGym-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cloudGym/Pods-cloudGym-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cloudGym/Pods-cloudGym-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DB5DB84C1A3A90068232D7A3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -368,21 +368,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E0D0AF32891933739426181C /* [CP] Copy Pods Resources */ = {
+		E3FAB18805FBEED07987A3FD /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cloudGym-cloudGymTests/Pods-cloudGym-cloudGymTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-cloudGym/Pods-cloudGym-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cloudGym-cloudGymTests/Pods-cloudGym-cloudGymTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-cloudGym/Pods-cloudGym-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cloudGym-cloudGymTests/Pods-cloudGym-cloudGymTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cloudGym/Pods-cloudGym-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -418,7 +418,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 66CD4924CB9A36A58D99E749 /* Pods-cloudGym-cloudGymTests.debug.xcconfig */;
+			baseConfigurationReference = 681DCFEF08E6F068B80044AD /* Pods-cloudGym-cloudGymTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -445,7 +445,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 03E91EDCEA60C35DE016A65C /* Pods-cloudGym-cloudGymTests.release.xcconfig */;
+			baseConfigurationReference = 4CFA1BF7F99E34347758A1C3 /* Pods-cloudGym-cloudGymTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -469,7 +469,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D44A7EB95B6F1A047FE4E4A4 /* Pods-cloudGym.debug.xcconfig */;
+			baseConfigurationReference = B52F6B2A762B29C863668E8A /* Pods-cloudGym.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
@@ -498,7 +498,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D5638EFE597D693A164CC8A6 /* Pods-cloudGym.release.xcconfig */;
+			baseConfigurationReference = EDCC74B5230D8DDEBCFCDB55 /* Pods-cloudGym.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;

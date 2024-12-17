@@ -2,7 +2,6 @@ import React from 'react'
 import { View, TextInput, Button, FlatList, Text, TouchableOpacity, StyleSheet ,SafeAreaView, Pressable ,Image} from 'react-native';
 
 const VenueCard = ({item}) => {
-    console.log(item);
   return (
     <View>
         <Pressable>

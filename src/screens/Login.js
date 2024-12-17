@@ -4,6 +4,7 @@ import React, { useState, useContext, useEffect } from 'react'
 import { View, Text, SafeAreaView, KeyboardAvoidingView, TextInput, Pressable } from 'react-native'
 import { AuthContext } from '../authContext';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { jwtDecode } from "jwt-decode";
 
 const Login = () => {
     const [mail, setMail] = useState("");
@@ -39,14 +40,20 @@ const Login = () => {
           email: mail,
           password: password,
         };
-        console.log(user);
+       
     
-        axios.post('http://localhost:4000/login', user).then(response => {
+        axios.post('http://10.0.2.2:4000/login', user).then(response => {
           const token = response.data.token;
-          console.log("token",token)
+          const decodedToken = jwtDecode(token);
+          console.log("token",token, decodedToken);
           AsyncStorage.setItem('authToken', token);
           setToken(token);
-        });
+        }).catch(error =>{
+            console.log(error);
+            Alert.alert(
+                'Login not Successful',
+            )
+        })
       };
 
     return (

@@ -9,6 +9,8 @@ const Register = () => {
     const [image, setImage] = useState("");
     const [name, setName] = useState("");
 
+    const url = "http://10.0.2.2:4000/register"
+
     const navigation = useNavigation();
 
     const handleRegister = () => {
@@ -18,7 +20,9 @@ const Register = () => {
             password: password
         }
 
-        axios.post("http://localhost:4000/register", user).then(response => {
+        console.log(user);
+
+        axios.post(url, user).then(response => {
             console.log(response);
             Alert.alert(
                 'Registration Successful',
@@ -28,9 +32,9 @@ const Register = () => {
             setMail("");
             setPassword("");
         }).catch(error => {
+            console.log(error);
             Alert.alert(
-                'Registration Successful',
-                'you have registered successfully'
+                'Registration not Successful',
             )
 
         })
