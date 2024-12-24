@@ -23,12 +23,12 @@ const userSchema = new mongoose.Schema({
      requests:[{
         from:{
             type: mongoose.Schema.Types.ObjectId,
-            ref:"User",
-            required:true
+            required:true,
+            ref:"User"
         },
         message:{
             type:String,
-            required:true,
+            required:true, 
         },
         status:{
             type:String,
@@ -44,6 +44,6 @@ const userSchema = new mongoose.Schema({
      ]
 })
 
-const User = mongoose.model('Users', userSchema);
+const User = mongoose.model('User', userSchema);
 
 module.exports = User;

@@ -61,7 +61,8 @@ const RequestChatScreen = () => {
       const userData = {
         senderId: userId,
         receiverId: route?.params?.receiverId,
-        message: message
+        message: message,
+        name: route?.params?.name,
       };
 
       const response = await axios.post("http://10.0.2.2:4000/sendrequest", userData);

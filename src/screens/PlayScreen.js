@@ -19,14 +19,37 @@ const PlayScreen = () => {
     clearAuthToken();
   };
   const clearAuthToken = async () => {
-    try {
-      await AsyncStorage.removeItem('authToken');
+
+    axios.post('http://10.0.2.2:4000/logout').then(response => {
+      AsyncStorage.removeItem('authToken');
       setToken('');
       navigation.replace('Login');
-    } catch (error) {
-      console.log('Error', error);
+      console.log(response);
+    }).catch(error =>{
+      console.log(error)
     }
+    )
+    // try {
+    //   await AsyncStorage.removeItem('authToken');
+    //   setToken('');
+    //   navigation.replace('Login');
+    // } catch (error) {
+    //   console.log('Error', error);
+    // }
   };
+
+  
+
+  // const fetchUser = async () => {
+  //   try {
+  //     const result = await fetch(`http://10.0.2.2:4000/user/${userId}`)
+  //     // const result = await fetch('http://localhost:4000/user/6752efa8b3aebd92b288ee8b');
+  //     const data = await result.json();
+  //     setUsers(data);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
 
 
 

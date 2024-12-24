@@ -119,9 +119,41 @@ connectDB().
 
 const authRouter = require("./routes/auth");
 const signalRouter = require("./routes/signal")
+const tinderRouter = require("./routes/tinder");
+const ConnectionRequest = require("./models/connectionRequest");
 
 app.use("/", authRouter);
 app.use("/", signalRouter);
+app.use("/", tinderRouter);
+
+// app.post("user/send/:status/:toUserId", async (req , res) =>{
+//     console.log("hiiti", req.params.toUserId , req.params.status)
+//     try {
+//         const cookies = req.cookies;
+//         const { token } = cookies;
+//         const decodedToken = await jwt.verify(token, "Nirpan@1995")
+//         const fromUserId = decodedToken.userId;
+//         const toUserId = req.params.toUserId;
+//         const status = req.params.status;
+
+//         const newConnectionRequest = new ConnectionRequest({
+//             fromUserId,
+//             toUserId,
+//             status
+//         })
+
+//         await newConnectionRequest.save();
+
+//         res.json({
+//             message:"Connections Request send successfully!"
+//         })
+
+
+//     } catch (error) {
+//         res.status(400).send("ERROR : " + error.message);
+//     }
+
+// })
 
 // app.get("/user/:userId", async (req, res) => {
 

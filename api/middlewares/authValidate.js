@@ -9,18 +9,20 @@ const userAuth = async (req, res, next) => {
         const cookies = req.cookies;
         const { token } = cookies;
         const decodedToken = await jwt.verify(token, "Nirvan@1995")
-        const { _id } = decodedToken;
-        const user = await User.findById((_id));
+        const { userId } = decodedToken;
+        const user = await User.findOne({ _id: userId });
         if (!user) {
-           console.log("user Not found");
-           throw new Error("user not found");
+            console.log("user Not found");
+             throw new Error("user not found");
         }
         req.user = user;
         next();
 
     } catch (error) {
-       res.status(500).message("");
+        res.status(500).send({message:"validation error"});
     }
 }
 
-exports.molule = userAuth;
+module.exports = {
+    userAuth
+}

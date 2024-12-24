@@ -13,6 +13,18 @@ const validateSignUpData = (req) =>{
 
 }
 
+const validateEditProfileData = (req) =>{
+    const { email , name} = req.body;
+
+    if(!name){
+      throw new Error("Name is not Valid")
+    }else if(!validator.isEmail(email)){
+        throw new Error("Email is not Valid")
+    }
+
+}
+
 module.exports = {
-    validateSignUpData
+    validateSignUpData,
+    validateEditProfileData
 }
