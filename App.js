@@ -24,6 +24,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import { AuthProvider } from './src/authContext';
+import { SocketContextProvider } from './src/SocketContext';
 
 
 
@@ -37,7 +38,9 @@ function App() {
 
   return (
     <AuthProvider>
+      <SocketContextProvider>
       <StackNavigator />
+      </SocketContextProvider>
     </AuthProvider>
   );
 }

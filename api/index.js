@@ -122,9 +122,139 @@ const signalRouter = require("./routes/signal")
 const tinderRouter = require("./routes/tinder");
 const ConnectionRequest = require("./models/connectionRequest");
 
+
+
 app.use("/", authRouter);
 app.use("/", signalRouter);
 app.use("/", tinderRouter);
+
+const http = require('http').createServer(app);
+
+const io = require('socket.io')(http);
+
+//{"userId" : "socket ID"}
+
+const userSocketMap = {};
+
+io.on('connection', socket => {
+  console.log('a user is connected', socket.id);
+
+  const userId = socket.handshake.query.userId;
+
+  console.log('userid', userId);
+
+  if (userId !== 'undefined') {
+    userSocketMap[userId] = socket.id;
+  }
+
+  console.log('user socket data', userSocketMap);
+
+  socket.on('disconnect', () => {
+    console.log('user disconnected', socket.id);
+    delete userSocketMap[userId];
+  });
+
+  socket.on('sendMessage', ({senderId, receiverId, message}) => {
+    const receiverSocketId = userSocketMap[receiverId];
+
+    console.log('receiver Id', receiverId);
+
+    if (receiverSocketId) {
+      io.to(receiverSocketId).emit('receiveMessage', {
+        senderId,
+        message,
+      });
+    }
+  });
+});
+
+http.listen(6000, () => {
+  console.log('Socket.IO running on port 3000');
+});
+
+app.post('/sendMessage', async (req, res) => {
+  try {
+    const {senderId, receiverId, message} = req.body;
+
+    const newMessage = new Message({
+      senderId,
+      receiverId,
+      message,
+    });
+
+    await newMessage.save();
+
+    const receiverSocketId = userSocketMap[receiverId];
+
+    if (receiverSocketId) {
+      console.log('emitting recieveMessage event to the reciver', receiverId);
+      io.to(receiverSocketId).emit('newMessage', newMessage);
+    } else {
+      console.log('Receiver socket ID not found');
+    }
+
+    res.status(201).json(newMessage);
+  } catch (error) {
+    console.log('ERROR', error);
+  }
+});
+
+app.get('/messages', async (req, res) => {
+  try {
+    const {senderId, receiverId} = req.query;
+
+    const messages = await Message.find({
+      $or: [
+        {senderId: senderId, receiverId: receiverId},
+        {senderId: receiverId, receiverId: senderId},
+      ],
+    }).populate('senderId', '_id name');
+
+    res.status(200).json(messages);
+  } catch (error) {
+    console.log('Error', error);
+  }
+});
+
+
+// const http = require("http").createServer(app);
+
+// const io = require("socket.io")(http);
+
+// const userSocketMap = {};
+
+// io.on('connection', socket => {
+//     console.log("id", socket.id);
+//     const userId = socket.handshake.query.userId;
+//     console.log("userId", userId);
+//     if (userId !== undefined) {
+//         userSocketMap[userId] = socket.id;
+//     }
+
+//     console.log("user socket data", userSocketMap)
+//     socket.on("disconnect", () => {
+//         console.log("user disconnected", socket.id);
+
+//         delete userSocketMap[userId];
+//     })
+
+//     socket.on("sendMessage", ({ senderId, recieverId, message }) => {
+//         const recieverSocketId = userSocketMap(recieverId);
+
+//         if (recieverSocketId) {
+//             io.to(recieverSocketId).emit('recieveMessage',
+//                 {
+//                     senderId,
+//                     message
+//                 })
+//         }
+
+//     })
+// })
+
+// http.listen(6000, ()=>{
+//     console.log("socket.io running on 6000")
+// })
 
 // app.post("user/send/:status/:toUserId", async (req , res) =>{
 //     console.log("hiiti", req.params.toUserId , req.params.status)

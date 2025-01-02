@@ -175,19 +175,44 @@ tinderRouter.get("/connections", async (req, res) => {
             ]
         }).populate("fromUserId", ["name", "email"]);
 
-        const data = connections.map((row) => {
-            if (row.fromUserI._id.toString() === loggedInUser._id.toString()) {
-                return row.toUserId
-            }
+        // const data = connections.map((row) => {
+        //     if (row.fromUserI._id.toString() === loggedInUser._id.toString()) {
+        //         return row.toUserId
+        //     }
 
-            return row.fromUserId;
-        });
+        //     return row.fromUserId;
+        // });
 
 
-        res.json({ data })
+        res.json({ data : connections})
 
     } catch (error) {
         res.status(400).send("ERROR :" + error.message)
+    }
+
+})
+
+tinderRouter.get("/feed",userAuth, async (req , res) =>{
+    try {
+        const loggedInUser = req.user;
+        const connectionRequest = await ConnectionRequest.find({
+            $or:[
+                {
+                    toUserId: loggedInUser._id
+                },
+                {
+                    fromUserId: loggedInUser._id
+                }
+
+            ]
+        }).select("fromUserId toUserId")
+
+        
+
+
+
+    } catch (error) {
+        
     }
 
 })
