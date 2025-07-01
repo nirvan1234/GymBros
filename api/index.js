@@ -19,7 +19,7 @@ const port = 8000;
 
 
 var cors = require('cors');
-app.use(cors({ origin: true, credentials: true }));
+app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 
 // cookieParser is a middleware used by server to store our token  and we can get the token for validating all apis hit
 app.use(cookieParser());
@@ -208,7 +208,7 @@ app.get('/messages', async (req, res) => {
         {senderId: senderId, receiverId: receiverId},
         {senderId: receiverId, receiverId: senderId},
       ],
-    }).populate('senderId', '_id name');
+    }).populate('senderId', ['_id', 'message','name']);
 
     res.status(200).json(messages);
   } catch (error) {

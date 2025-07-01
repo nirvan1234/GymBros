@@ -13,9 +13,9 @@ authRouter.post("/register", async (req, res) => {
         validateSignUpData(req);
         const { name, email, password } = req.body;
         const passwordHash = await bcrypt.hash(password, 10);
-        const newUser = new User({ name, email, password: passwordHash })
-        await newUser.save();
-        res.status(200).json({ message: "user registered successfully!!" })
+        const user = new User({ name, email, password: passwordHash })
+        await user.save();
+        res.status(200).json({ message: "user registered successfully!!" , user})
 
     } catch (error) {
         console.log(error);
@@ -44,7 +44,7 @@ authRouter.post("/login", async (req, res) => {
         res.cookie("token", token);
         // res.send("Login Succesfully !!")
 
-        res.status(200).json({ token });
+        res.status(200).json({ token, user});
         // } else {
         //     throw new error("Email/Password is invalid");
         // }

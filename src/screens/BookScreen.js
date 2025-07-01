@@ -1,179 +1,189 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  SafeAreaView,
-  Pressable,
-  Image,
-} from 'react-native';
-import React from 'react';
-import InstaStory from 'react-native-insta-story';
+// import {
+//   StyleSheet,
+//   Text,
+//   View,
+//   SafeAreaView,
+//   Pressable,
+//   Image,
+// } from 'react-native';
+// import React from 'react';
+// import InstaStory from 'react-native-insta-story';
 
-const ProfileScreen = () => {
-  const channels = [
-    {
-      id: '0',
-      name: 'Netflix',
-      image: 'https://cdn-icons-png.flaticon.com/128/2504/2504929.png',
-      text: 'Your in the right place',
-      date: '2:45 AM',
-    },
-    {
-      id: '2',
-      name: 'Marc Zuckerberg',
-      image:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHtsQvDUZ3Q90XuFjYvcZ-KVaDhUJcA39u-g&s',
-      text: 'Anyone else watching this weekend?',
-      date: '2:45 AM',
-    },
-    {
-      id: '0',
-      name: 'Indian Cricket Team',
-      image:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAtic4zkoYA0BmKDTREcuxL0VWVMlP3UqBUg&s',
-      text: 'Any guesses who won the Fielding medal for the series',
-      date: '1:45 PM',
-    },
-    {
-      id: '3',
-      name: 'Cravings',
-      image:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPcBoRdfwpZXICr6FFLcUDT4c22xCzTVwQj6e9lwQHTo-KZw12rZD_z4u-_595SK_EpU8&usqp=CAU',
-      text: 'Fruit Platters are the best',
-      date: '2:45 AM',
-    },
-    {
-      id: '5',
-      name: 'Royal Challengers Bangalore',
-      image:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDlVuzjh0-kKm1BbO5qBjeIwelK8r4DvYZ5A&s',
-      text: 'We only want it to rain boundaries and wickets for RCB',
-      date: '2:45 AM',
-    },
-  ];
-  const data = [
-    {
-      user_id: 1,
-      user_image:
-        'https://pbs.twimg.com/profile_images/1222140802475773952/61OmyINj.jpg',
-      user_name: 'Ahmet Çağlar Durmuş',
-      stories: [
-        {
-          story_id: 1,
-          story_image:
-            'https://image.freepik.com/free-vector/universe-mobile-wallpaper-with-planets_79603-600.jpg',
-          swipeText: 'Custom swipe text for this story',
-          onPress: () => console.log('story 1 swiped'),
-        },
-        {
-          story_id: 2,
-          story_image:
-            'https://image.freepik.com/free-vector/mobile-wallpaper-with-fluid-shapes_79603-601.jpg',
-        },
-      ],
-    },
-    {
-      user_id: 2,
-      user_image:
-        'https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80',
-      user_name: 'Test User',
-      stories: [
-        {
-          story_id: 1,
-          story_image:
-            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjORKvjcbMRGYPR3QIs3MofoWkD4wHzRd_eg&usqp=CAU',
-          swipeText: 'Custom swipe text for this story',
-          onPress: () => console.log('story 1 swiped'),
-        },
-        {
-          story_id: 2,
-          story_image:
-            'https://files.oyebesmartest.com/uploads/preview/vivo-u20-mobile-wallpaper-full-hd-(1)qm6qyz9v60.jpg',
-          swipeText: 'Custom swipe text for this story',
-          onPress: () => console.log('story 2 swiped'),
-        },
-      ],
-    },
-  ];
-  return (
-    <SafeAreaView>
-      <View style={{padding: 10}}>
-        <Text style={{fontSize: 17, fontWeight: 'bold'}}>Updates</Text>
+// const ProfileScreen = () => {
+//   const channels = [
+//     {
+//       id: '0',
+//       name: 'Netflix',
+//       image: 'https://cdn-icons-png.flaticon.com/128/2504/2504929.png',
+//       text: 'Your in the right place',
+//       date: '2:45 AM',
+//     },
+//     {
+//       id: '2',
+//       name: 'Marc Zuckerberg',
+//       image:
+//         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHtsQvDUZ3Q90XuFjYvcZ-KVaDhUJcA39u-g&s',
+//       text: 'Anyone else watching this weekend?',
+//       date: '2:45 AM',
+//     },
+//     {
+//       id: '0',
+//       name: 'Indian Cricket Team',
+//       image:
+//         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAtic4zkoYA0BmKDTREcuxL0VWVMlP3UqBUg&s',
+//       text: 'Any guesses who won the Fielding medal for the series',
+//       date: '1:45 PM',
+//     },
+//     {
+//       id: '3',
+//       name: 'Cravings',
+//       image:
+//         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPcBoRdfwpZXICr6FFLcUDT4c22xCzTVwQj6e9lwQHTo-KZw12rZD_z4u-_595SK_EpU8&usqp=CAU',
+//       text: 'Fruit Platters are the best',
+//       date: '2:45 AM',
+//     },
+//     {
+//       id: '5',
+//       name: 'Royal Challengers Bangalore',
+//       image:
+//         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDlVuzjh0-kKm1BbO5qBjeIwelK8r4DvYZ5A&s',
+//       text: 'We only want it to rain boundaries and wickets for RCB',
+//       date: '2:45 AM',
+//     },
+//   ];
+//   const data = [
+//     {
+//       user_id: 1,
+//       user_image:
+//         'https://pbs.twimg.com/profile_images/1222140802475773952/61OmyINj.jpg',
+//       user_name: 'Ahmet Çağlar Durmuş',
+//       stories: [
+//         {
+//           story_id: 1,
+//           story_image:
+//             'https://image.freepik.com/free-vector/universe-mobile-wallpaper-with-planets_79603-600.jpg',
+//           swipeText: 'Custom swipe text for this story',
+//           onPress: () => console.log('story 1 swiped'),
+//         },
+//         {
+//           story_id: 2,
+//           story_image:
+//             'https://image.freepik.com/free-vector/mobile-wallpaper-with-fluid-shapes_79603-601.jpg',
+//         },
+//       ],
+//     },
+//     {
+//       user_id: 2,
+//       user_image:
+//         'https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80',
+//       user_name: 'Test User',
+//       stories: [
+//         {
+//           story_id: 1,
+//           story_image:
+//             'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjORKvjcbMRGYPR3QIs3MofoWkD4wHzRd_eg&usqp=CAU',
+//           swipeText: 'Custom swipe text for this story',
+//           onPress: () => console.log('story 1 swiped'),
+//         },
+//         {
+//           story_id: 2,
+//           story_image:
+//             'https://files.oyebesmartest.com/uploads/preview/vivo-u20-mobile-wallpaper-full-hd-(1)qm6qyz9v60.jpg',
+//           swipeText: 'Custom swipe text for this story',
+//           onPress: () => console.log('story 2 swiped'),
+//         },
+//       ],
+//     },
+//   ];
+//   return (
+//     <SafeAreaView>
+//       <View style={{padding: 10}}>
+//         <Text style={{fontSize: 17, fontWeight: 'bold'}}>Updates</Text>
 
-        <View
-          style={{
-            flexDirection: 'row',
-            alignItems: 'center',
-            marginHorizontal: 10,
-          }}>
-          <View style={{marginTop: 10}}>
-            <Pressable>
-              <Image
-                style={{width: 58, height: 58, borderRadius: 29}}
-                source={{
-                  uri: 'https://lh3.googleusercontent.com/ogw/AF2bZyi09EC0vkA0pKVqrtBq0Y-SLxZc0ynGmNrVKjvV66i3Yg=s64-c-mo',
-                }}
-              />
-              <Text style={{textAlign: 'center', marginTop: 5}}>sujan</Text>
-            </Pressable>
-          </View>
-          <InstaStory data={data} duration={10} />
-        </View>
-      </View>
+//         <View
+//           style={{
+//             flexDirection: 'row',
+//             alignItems: 'center',
+//             marginHorizontal: 10,
+//           }}>
+//           <View style={{marginTop: 10}}>
+//             <Pressable>
+//               <Image
+//                 style={{width: 58, height: 58, borderRadius: 29}}
+//                 source={{
+//                   uri: 'https://lh3.googleusercontent.com/ogw/AF2bZyi09EC0vkA0pKVqrtBq0Y-SLxZc0ynGmNrVKjvV66i3Yg=s64-c-mo',
+//                 }}
+//               />
+//               <Text style={{textAlign: 'center', marginTop: 5}}>sujan</Text>
+//             </Pressable>
+//           </View>
+//           <InstaStory data={data} duration={10} />
+//         </View>
+//       </View>
 
-      <View style={{padding: 10}}>
-        <Text style={{fontSize: 15, fontWeight: 'bold'}}>Channels</Text>
-        {channels?.map((item, index) => (
-          <View
-            style={{
-              marginVertical: 10,
-              flexDirection: 'row',
-              alignItems: 'center',
-              gap: 12,
-            }}>
-            <View>
-              <Image
-                style={{width: 50, height: 50, borderRadius: 25}}
-                source={{uri: item?.image}}
-              />
-            </View>
+//       <View style={{padding: 10}}>
+//         <Text style={{fontSize: 15, fontWeight: 'bold'}}>Channels</Text>
+//         {channels?.map((item, index) => (
+//           <View
+//             style={{
+//               marginVertical: 10,
+//               flexDirection: 'row',
+//               alignItems: 'center',
+//               gap: 12,
+//             }}>
+//             <View>
+//               <Image
+//                 style={{width: 50, height: 50, borderRadius: 25}}
+//                 source={{uri: item?.image}}
+//               />
+//             </View>
 
-            <View style={{flex: 1}}>
-              <Text style={{fontSize: 15, fontWeight: 'bold'}}>
-                {item?.name}
-              </Text>
-              <Text style={{marginTop: 4, color: 'gray'}}>{item?.text}</Text>
-            </View>
+//             <View style={{flex: 1}}>
+//               <Text style={{fontSize: 15, fontWeight: 'bold'}}>
+//                 {item?.name}
+//               </Text>
+//               <Text style={{marginTop: 4, color: 'gray'}}>{item?.text}</Text>
+//             </View>
 
-            <Text>{item?.date}</Text>
-          </View>
-        ))}
+//             <Text>{item?.date}</Text>
+//           </View>
+//         ))}
 
-        <View
-          style={{
-            justifyContent: 'center',
-            alignItems: 'center',
-            marginTop: 30,
-          }}>
-          <Image
-            style={{width: 120, height: 120}}
-            source={{
-              uri: 'https://signal.org/assets/images/features/Stickers.png',
-            }}
-          />
-        </View>
-      </View>
-    </SafeAreaView>
-  );
-};
+//         <View
+//           style={{
+//             justifyContent: 'center',
+//             alignItems: 'center',
+//             marginTop: 30,
+//           }}>
+//           <Image
+//             style={{width: 120, height: 120}}
+//             source={{
+//               uri: 'https://signal.org/assets/images/features/Stickers.png',
+//             }}
+//           />
+//         </View>
+//       </View>
+//     </SafeAreaView>
+//   );
+// };
 
-export default ProfileScreen;
+// export default ProfileScreen;
 
-const styles = StyleSheet.create({});
+// const styles = StyleSheet.create({});
 // import React, { useState } from 'react';
 // import { View, TextInput, Button, FlatList, Text, TouchableOpacity, StyleSheet ,SafeAreaView, Pressable } from 'react-native';
 // import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-// import VenueCard from '../components/venueCard';
+// // import VenueCard from '../components/venueCard';
+
+// const VenueCard = ({ item }) => {
+//   return (
+//     <View>
+//       <Text>{item.id}</Text>
+//       <Text>{item.name}</Text>
+//     </View>
+//   );
+// };
+
 
 // const BookScreen = () => {
 
@@ -406,10 +416,16 @@ const styles = StyleSheet.create({});
 //       </Pressable>
 //       <FlatList 
 //       data={venues}
+//       renderItem={({item}) => <VenueCard item={item} /> }
+
+
+//       />
+//       {/* <FlatList 
+//       data={venues}
 //       renderItem={({item}) => <VenueCard item={item} />}
 //       contentContainerStyle={{paddingBottom:10}}
 //       showsVerticalScrollIndicator={false}
-//       />
+//       /> */}
 //     </SafeAreaView>
 //   );
 // };
@@ -434,3 +450,189 @@ const styles = StyleSheet.create({});
 //   borderWidth: 2,
 //  }
 // })
+
+
+
+// import React, { useState, useEffect } from "react";
+// import {
+//   Image,
+//   Pressable,
+//   StyleSheet,
+//   Text,
+//   View,
+//   FlatList,
+// } from "react-native";
+
+// const VenueCard = ({ item }) => {
+//   return (
+//     <View>
+//       <Text>{item.id}</Text>
+//       <Text>{item.title}</Text>
+//     </View>
+//   );
+// };
+// function BookScreen() {
+//   const [data, setData] = useState([]);
+//   useEffect(() => {
+//     fetchData();
+//   }, []);
+//   const fetchData = async () => {
+//     const result = await fetch("https://jsonplaceholder.typicode.com/posts");
+//     const json = await result.json();
+//     setData(json);
+//   };
+//   console.log(data);
+//   return (
+//     <View style={styles.app}>
+//       <Text>abc</Text>
+//       <FlatList
+//         data={data}
+//         renderItem={({ item }) => <VenueCard item={item} />}
+//         keyExtractor={(item) => item.id}
+//       />
+//     </View>
+//   );
+// }
+
+// const styles = StyleSheet.create({
+//   app: {
+//     marginHorizontal: "auto",
+//     maxWidth: 500,
+//   },
+//   logo: {
+//     height: 80,
+//   },
+//   header: {
+//     padding: 20,
+//   },
+//   title: {
+//     fontWeight: "bold",
+//     fontSize: "1.5rem",
+//     marginVertical: "1em",
+//     textAlign: "center",
+//   },
+//   text: {
+//     lineHeight: "1.5em",
+//     fontSize: "1.125rem",
+//     marginVertical: "1em",
+//     textAlign: "center",
+//   },
+//   link: {
+//     color: "#1B95E0",
+//   },
+//   code: {
+//     fontFamily: "monospace, monospace",
+//   },
+// });
+
+// const buttonStyles = StyleSheet.create({
+//   button: {
+//     backgroundColor: "#2196F3",
+//     borderRadius: 2,
+//   },
+//   text: {
+//     color: "#fff",
+//     fontWeight: "500",
+//     padding: 8,
+//     textAlign: "center",
+//     textTransform: "uppercase",
+//   },
+// });
+
+// export default BookScreen;
+
+import React, { useState } from 'react';
+import { View, TextInput, Button, FlatList, Text, TouchableOpacity } from 'react-native';
+
+const BookScreen = () => {
+  // State to hold the list of tasks and the currently edited task
+  const [tasks, setTasks] = useState([]);
+  const [taskInput, setTaskInput] = useState('');
+  const [editingTaskId, setEditingTaskId] = useState(null);
+  const [editedTaskText, setEditedTaskText] = useState('');
+
+  // Handle adding a new task
+  const addTask = () => {
+    if (taskInput.trim()) {
+      const newTask = { id: Date.now().toString(), text: taskInput };
+      setTasks([...tasks, newTask]);
+      setTaskInput(''); // Reset input field
+    }
+  };
+
+  // Handle editing a task
+  const editTask = (id, text) => {
+    setEditingTaskId(id); // Set the task to be edited
+    setEditedTaskText(text); // Pre-fill the input with the existing task text
+  };
+
+  // Handle saving the edited task
+  const saveEditedTask = () => {
+    if (editedTaskText.trim()) {
+      setTasks(tasks.map(task =>
+        task.id === editingTaskId ? { ...task, text: editedTaskText } : task
+      ));
+      setEditingTaskId(null); // Reset edit mode
+      setEditedTaskText('');
+    }
+  };
+
+  // Handle removing a task
+  const removeTask = (id) => {
+    setTasks(tasks.filter(task => task.id !== id));
+  };
+
+  return (
+    <View style={{ padding: 20 }}>
+      {/* Input for adding new tasks */}
+      <TextInput
+        style={{ height: 40, borderColor: 'gray', borderWidth: 1, marginBottom: 10, paddingLeft: 10 }}
+        value={taskInput}
+        onChangeText={setTaskInput}
+        placeholder="Enter new task"
+      />
+      <Button title="Add Task" onPress={addTask} />
+
+      {/* List of tasks */}
+      <FlatList
+        testID="toDoList" // Added testID for testing purposes
+        data={tasks}
+        keyExtractor={item => item.id}
+        renderItem={({ item }) => (
+          <View style={{ flexDirection: 'row', alignItems: 'center', marginVertical: 5 }}>
+            {editingTaskId === item.id ? (
+              // If task is being edited, show input and save button
+              <View style={{ flexDirection: 'row', flex: 1 }}>
+                <TextInput
+                  style={{ height: 40, borderColor: 'gray', borderWidth: 1, flex: 1, paddingLeft: 10 }}
+                  value={editedTaskText}
+                  onChangeText={setEditedTaskText}
+                />
+                <Button title="Save" onPress={saveEditedTask} />
+              </View>
+            ) : (
+              // If task is not being edited, just show the task text and buttons
+              <Text style={{ flex: 1 }}>{item.text}</Text>
+            )}
+
+            {editingTaskId !== item.id && (
+              <>
+                {/* Edit button */}
+                <TouchableOpacity onPress={() => editTask(item.id, item.text)}>
+                  <Text style={{ color: 'blue', marginRight: 10 }}>Edit</Text>
+                </TouchableOpacity>
+
+                {/* Remove button */}
+                <TouchableOpacity onPress={() => removeTask(item.id)}>
+                  <Text style={{ color: 'red' }}>Remove</Text>
+                </TouchableOpacity>
+              </>
+            )}
+          </View>
+        )}
+      />
+    </View>
+  );
+};
+
+export default BookScreen;

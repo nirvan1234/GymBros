@@ -8,6 +8,32 @@ const { userAuth } = require("../middlewares/authValidate")
 
 const tinderRouter = express.Router();
 
+tinderRouter.get("/profile/view", async (req, res) => {
+    try {
+        const cookies = req.cookies;
+        const { token } = cookies;
+        const decodedToken = await jwt.verify(token, "Nirpan@1995")
+        const { userId } = decodedToken;
+        // const loggedInUser = await User.findOne({ _id: userId });
+        // res.json(loggedInUser);
+
+        const user = await User.findOne({ _id: userId })
+        // const user = await User.findOne({ name: name});
+        // const populateUser = await user.populate('requests.from', 'name email',);
+        console.log("user", user);
+        if (user) {
+            res.json(user);
+        } else {
+            res.status(400);
+            throw new Error("User Not Found")
+        }
+    } catch (error) {
+        res.status(400).send("Error : " + error.message)
+    }
+
+
+})
+
 tinderRouter.patch("/profile/edit", async (req, res) => {
     try {
         // if (!validateEditProfileData) {
@@ -85,15 +111,15 @@ tinderRouter.post("/request/send/:status/:toUserId", async (req, res) => {
 
 })
 
-tinderRouter.post("/request/review/:status/:requestId", userAuth, async (req, res) => {
+tinderRouter.post("/request/review/:status/:requestId", async (req, res) => {
     console.log(req.params);
     try {
-        // const cookies = req.cookies;
-        // const { token } = cookies;
-        // const decodedToken = await jwt.verify(token, "Nirpan@1995")
-        // const { userId } = decodedToken;
-        // const loggedInUser = await User.findOne({ _id: userId });
-        const loggedInUser = req.user;
+        const cookies = req.cookies;
+        const { token } = cookies;
+        const decodedToken = await jwt.verify(token, "Nirpan@1995")
+        const { userId } = decodedToken;
+        const loggedInUser = await User.findOne({ _id: userId });
+        // const loggedInUser = req.user;
 
         const { status, requestId } = req.params;
 
@@ -184,7 +210,7 @@ tinderRouter.get("/connections", async (req, res) => {
         // });
 
 
-        res.json({ data : connections})
+        res.json({ data: connections })
 
     } catch (error) {
         res.status(400).send("ERROR :" + error.message)
@@ -192,27 +218,52 @@ tinderRouter.get("/connections", async (req, res) => {
 
 })
 
-tinderRouter.get("/feed",userAuth, async (req , res) =>{
+tinderRouter.get("/feed", async (req, res) => {
     try {
+        const cookies = req.cookies;
+        const { token } = cookies;
+        const decodedToken = await jwt.verify(token, "Nirpan@1995")
+        const { userId } = decodedToken;
+
+
+        // req.params.page will be passed if /feed: Page
+        const page = parseInt(req.query.page) || 1;
+        const limit = parseInt(req.query.limit) || 10;
+        const skip = (page - 1) * limit;
+
+
+
         const loggedInUser = req.user;
         const connectionRequest = await ConnectionRequest.find({
-            $or:[
+            $or: [
                 {
-                    toUserId: loggedInUser._id
+                    toUserId: userId
                 },
                 {
-                    fromUserId: loggedInUser._id
+                    fromUserId: userId
                 }
 
             ]
-        }).select("fromUserId toUserId")
+        }).select("fromUserId toUserId").skip(skip).limit(limit)
 
-        
+        const hideUserFromFeed = new Set();
+
+        connectionRequest.forEach((req) => {
+            hideUserFromFeed.add(req.fromUserId.toString());
+            hideUserFromFeed.add(req.toUserId.toString())
+        })
 
 
+        const users = await User.find({
+            $and: [{ _id: { $nin: Array.from(hideUserFromFeed) } },
+            { _id: { $ne: userId } }
+            ]
+        })
+
+        res.json(users);
 
     } catch (error) {
-        
+        res.status(400).send("Error : " + error.message)
     }
 
 })

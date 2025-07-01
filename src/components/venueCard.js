@@ -4,7 +4,8 @@ import { View, TextInput, Button, FlatList, Text, TouchableOpacity, StyleSheet ,
 const VenueCard = ({item}) => {
   return (
     <View>
-        <Pressable>
+      <Text>{item.body}</Text>
+        {/* <Pressable>
             <Image
             style={{
                 width:"100%",
@@ -25,7 +26,7 @@ const VenueCard = ({item}) => {
                 </View>
             
             </View>
-        </Pressable>
+        </Pressable> */}
     </View>
   )
 }

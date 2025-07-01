@@ -9,7 +9,6 @@ const signalRouter = express.Router();
 
 
 
-
 signalRouter.get("/user/:userId", async (req, res) => {
 
     try {

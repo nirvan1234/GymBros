@@ -98,6 +98,9 @@ const ChatRoom = () => {
       });
 
       setMessages(response.data);
+
+      console.log("messages", response.data)
+      
     } catch (error) {
       console.log('Error', error);
     }
